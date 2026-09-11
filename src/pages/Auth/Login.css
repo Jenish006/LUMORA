@@ -1,0 +1,502 @@
+.auth-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(198, 161, 91, 0.08),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(198, 161, 91, 0.04),
+      transparent 30%
+    );
+  pointer-events: none;
+}
+
+.auth-container {
+  width: min(100% - 32px, 520px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #8f8f8f;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  transition: color 0.3s ease;
+}
+
+.auth-back:hover {
+  color: #c6a15b;
+}
+
+.auth-card {
+  padding: 48px;
+  background: rgba(23, 23, 23, 0.92);
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f5f0e8;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  margin-bottom: 48px;
+}
+
+.auth-logo-mark {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #c6a15b;
+  display: grid;
+  place-items: center;
+  color: #c6a15b;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+}
+
+.auth-heading {
+  margin-bottom: 36px;
+}
+
+.auth-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c6a15b;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  margin-bottom: 18px;
+}
+
+.auth-heading h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 52px);
+  line-height: 1.02;
+  font-weight: 400;
+  color: #f5f0e8;
+}
+
+.auth-heading h1 span {
+  display: block;
+  color: #c6a15b;
+  font-style: italic;
+}
+
+.auth-heading p {
+  max-width: 390px;
+  margin-top: 20px;
+  color: #8f8f8f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth-field {
+  position: relative;
+}
+
+.auth-field label {
+  display: block;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  margin-bottom: 9px;
+}
+
+.auth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-label-row a {
+  color: #a98a52;
+  font-size: 10px;
+}
+
+.auth-input {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border: 1px solid rgba(245, 240, 232, 0.12);
+  background: #111;
+  color: #777;
+  transition: border-color 0.3s ease;
+}
+
+.auth-input:focus-within {
+  border-color: rgba(198, 161, 91, 0.6);
+}
+
+.auth-input input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f5f0e8;
+  font-size: 13px;
+}
+
+.auth-input input::placeholder {
+  color: #555;
+}
+
+.password-toggle {
+  color: #777;
+  background: transparent;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.auth-submit {
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #c6a15b;
+  color: #0b0b0b;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.auth-submit:hover {
+  background: #d8b976;
+  transform: translateY(-2px);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 32px 0 24px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: rgba(245, 240, 232, 0.08);
+}
+
+.auth-divider span {
+  color: #555;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.auth-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  color: #777;
+  font-size: 12px;
+}
+
+.auth-signup a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #c6a15b;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  color: #444;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .auth-container {
+    width: min(100% - 24px, 520px);
+    padding: 20px 0;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+  }
+
+  .auth-brand {
+    margin-bottom: 36px;
+  }
+
+  .auth-heading h1 {
+    font-size: 40px;
+  }
+}
+/* =========================================
+   LUMORA PROFESSIONAL ERROR MODAL
+   ========================================= */
+
+.lumora-error-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  animation: lumora-error-overlay-in 0.2s ease;
+}
+
+.lumora-error-modal {
+  position: relative;
+
+  width: min(430px, 100%);
+
+  padding: 34px 34px 30px;
+
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 8px 30px rgba(0, 0, 0, 0.25);
+
+  animation: lumora-error-modal-in 0.25s ease;
+}
+
+/* Close button */
+
+.lumora-error-close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lumora-error-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Error icon */
+
+.lumora-error-icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #e56b6f;
+
+  background: rgba(229, 107, 111, 0.10);
+  border: 1px solid rgba(229, 107, 111, 0.25);
+
+  box-shadow:
+    0 0 0 8px rgba(229, 107, 111, 0.035);
+
+  animation: lumora-error-icon-in 0.35s ease;
+}
+
+/* Heading */
+
+.lumora-error-modal h3 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Message */
+
+.lumora-error-modal p {
+  margin: 0 auto;
+
+  max-width: 340px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* OK button */
+
+.lumora-error-button {
+  width: 100%;
+
+  margin-top: 26px;
+  padding: 13px 20px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #e8c96a;
+  color: #171717;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lumora-error-button:hover {
+  filter: brightness(1.06);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(232, 201, 106, 0.18);
+}
+
+.lumora-error-button:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+
+@keyframes lumora-error-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lumora-error-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lumora-error-icon-in {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .lumora-error-overlay {
+    padding: 18px;
+  }
+
+  .lumora-error-modal {
+    padding: 30px 24px 24px;
+    border-radius: 17px;
+  }
+
+  .lumora-error-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .lumora-error-modal h3 {
+    font-size: 19px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .lumora-error-overlay,
+  .lumora-error-modal,
+  .lumora-error-icon {
+    animation: none;
+  }
+
+  .lumora-error-close,
+  .lumora-error-button {
+    transition: none;
+  }
+}

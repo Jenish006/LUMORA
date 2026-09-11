@@ -1,0 +1,955 @@
+/* =========================================================
+   LUMORA RESERVATION PAGE
+   MATCHED TO THE OLD RESERVATION JSX
+   ========================================================= */
+
+.reservation-page {
+  position: relative;
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #f5f0e8;
+  overflow-x: hidden;
+}
+
+.reservation-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 78% 12%,
+      rgba(198, 161, 91, 0.09),
+      transparent 30%
+    ),
+    #0b0b0b;
+}
+
+.reservation {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 32px;
+  padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.reservation-top {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 2px;
+}
+
+.reservation-back {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #858585;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.reservation-back:hover {
+  color: #f5f0e8;
+  gap: 12px;
+}
+
+.reservation-back svg {
+  flex-shrink: 0;
+  color: #c6a15b;
+}
+
+.reservation-brand {
+  display: inline-block;
+
+  color: #f5f0e8;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.reservation-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 70px;
+
+  padding-top: 88px;
+  padding-bottom: 48px;
+}
+
+.reservation-header-title {
+  min-width: 0;
+  flex: 1;
+}
+
+.section-eyebrow {
+  margin: 0 0 17px;
+
+  color: #c6a15b;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.reservation-header h1 {
+  margin: 0;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(60px, 7.2vw, 105px);
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.055em;
+}
+
+.reservation-header h1 span {
+  display: block;
+
+  color: #c6a15b;
+
+  font-style: italic;
+}
+
+.reservation-header-text {
+  width: 340px;
+  flex-shrink: 0;
+
+  margin: 0 0 3px;
+
+  color: #858585;
+
+  font-size: 12px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   RESERVATION CARD
+   ========================================================= */
+
+.reservation-card {
+  position: relative;
+
+  width: 100%;
+
+  padding: 40px 42px 38px;
+
+  border: 1px solid rgba(245, 240, 232, 0.12);
+
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(198, 161, 91, 0.09),
+      transparent 35%
+    ),
+    #121212;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.reservation-card-top {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 27px;
+  margin-bottom: 29px;
+
+  border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.reservation-card-top span {
+  color: #666;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.19em;
+
+  white-space: nowrap;
+}
+
+.reservation-card-top span:last-child {
+  color: #555;
+}
+
+
+/* =========================================================
+   FORM FIELD
+   ========================================================= */
+
+.reservation-field {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 25px;
+}
+
+.reservation-field label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #707070;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.19em;
+}
+
+
+/* =========================================================
+   DATE + GUESTS
+   ========================================================= */
+
+.reservation-row {
+  display: grid;
+
+  grid-template-columns: 1fr 0.55fr;
+
+  gap: 18px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   SELECT + INPUT
+   ========================================================= */
+
+.reservation-select,
+.reservation-input-wrap {
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(245, 240, 232, 0.12);
+
+  border-radius: 8px;
+
+  background: #171717;
+
+  color: #e7e0d7;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.reservation-select {
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 17px;
+
+  text-align: left;
+}
+
+.reservation-select:hover {
+  border-color: rgba(198, 161, 91, 0.55);
+
+  background: #1a1a1a;
+}
+
+.reservation-select:focus-visible {
+  outline: none;
+
+  border-color: rgba(198, 161, 91, 0.7);
+}
+
+.reservation-select span {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reservation-select svg {
+  flex-shrink: 0;
+
+  color: #c6a15b;
+}
+
+
+/* =========================================================
+   DATE INPUT
+   ========================================================= */
+
+.reservation-input-wrap {
+  justify-content: flex-start;
+
+  gap: 12px;
+
+  padding: 0 17px;
+}
+
+.reservation-input-wrap svg {
+  flex-shrink: 0;
+
+  color: #c6a15b;
+}
+
+.reservation-input-wrap input {
+  width: 100%;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #e7e0d7;
+
+  font-size: 13px;
+}
+
+.reservation-input-wrap input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+
+  opacity: 0.5;
+
+  filter: invert(1);
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.reservation-dropdown {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: calc(100% + 7px);
+
+  z-index: 50;
+
+  padding: 6px;
+
+  border: 1px solid rgba(245, 240, 232, 0.12);
+
+  border-radius: 9px;
+
+  background: #191919;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.reservation-dropdown button {
+  width: 100%;
+
+  padding: 13px 12px;
+
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #999;
+
+  font-size: 12px;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.reservation-dropdown button:hover,
+.reservation-dropdown button.selected {
+  background: rgba(198, 161, 91, 0.1);
+
+  color: #c6a15b;
+}
+
+.guest-dropdown {
+  max-height: 300px;
+
+  overflow-y: auto;
+}
+
+.time-dropdown {
+  max-height: 330px;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   SEATING
+   ========================================================= */
+
+.table-options {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.table-options button {
+  min-height: 82px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 17px;
+
+  border: 1px solid rgba(245, 240, 232, 0.1);
+
+  border-radius: 8px;
+
+  background: #171717;
+
+  color: #999;
+
+  text-align: left;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.table-options button:hover,
+.table-options button.active {
+  border-color: #c6a15b;
+
+  background: rgba(198, 161, 91, 0.08);
+
+  color: #f5f0e8;
+}
+
+.table-options span {
+  font-size: 12px;
+}
+
+.table-options small {
+  color: #626262;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.reservation-summary {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 35px;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.summary-details {
+  min-width: 0;
+}
+
+.summary-details > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #666;
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+}
+
+.summary-details p {
+  margin: 0;
+
+  color: #aaa;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.reservation-submit {
+  flex-shrink: 0;
+
+  min-width: 135px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 15px 22px;
+
+  background: #f5f0e8;
+
+  color: #0b0b0b;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    gap 0.3s ease;
+}
+
+.reservation-submit:hover {
+  background: #c6a15b;
+
+  gap: 17px;
+}
+
+.reservation-submit svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.reservation-note {
+  margin: 24px 0 0;
+
+  color: #4f4f4f;
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .reservation {
+    padding-top: 28px;
+  }
+
+  .reservation-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding-top: 72px;
+    padding-bottom: 45px;
+  }
+
+  .reservation-header-text {
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+  .reservation-card {
+    padding: 34px 32px 35px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .reservation {
+    width: calc(100% - 32px);
+
+    padding-top: 24px;
+    padding-bottom: 55px;
+  }
+
+  .reservation-top {
+    padding: 0;
+  }
+
+  .reservation-back {
+    gap: 7px;
+
+    font-size: 8px;
+  }
+
+  .reservation-brand {
+    font-size: 9px;
+
+    letter-spacing: 0.2em;
+  }
+
+  .reservation-header {
+    gap: 23px;
+
+    padding-top: 63px;
+    padding-bottom: 38px;
+  }
+
+  .section-eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 7px;
+  }
+
+  .reservation-header h1 {
+    font-size: 57px;
+
+    line-height: 0.9;
+  }
+
+  .reservation-header-text {
+    width: 100%;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+  }
+
+  .reservation-card {
+    padding: 24px 18px 27px;
+
+    border-radius: 16px;
+  }
+
+  .reservation-card-top {
+    padding-bottom: 21px;
+    margin-bottom: 24px;
+  }
+
+  .reservation-card-top span {
+    font-size: 7px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .reservation-field {
+    margin-bottom: 21px;
+  }
+
+  .reservation-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .reservation-select,
+  .reservation-input-wrap {
+    min-height: 55px;
+  }
+
+  .table-options {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .table-options button {
+    min-height: 74px;
+  }
+
+  .reservation-summary {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .summary-details p {
+    white-space: normal;
+
+    line-height: 1.6;
+  }
+
+  .reservation-submit {
+    width: 100%;
+  }
+
+  .reservation-note {
+    line-height: 1.7;
+  }
+}
+/* ============================================================
+   LUMORA MESSAGE POPUP
+   ============================================================ */
+
+.lumora-message-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: lumora-message-overlay-in 0.22s ease;
+}
+
+.lumora-message-popup {
+  position: relative;
+
+  width: min(440px, 100%);
+
+  padding: 42px 36px 34px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(23, 23, 23, 0.08);
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  animation: lumora-message-popup-in 0.28s ease;
+}
+
+.lumora-message-close {
+  position: absolute;
+
+  top: 15px;
+  right: 17px;
+
+  width: 32px;
+  height: 32px;
+
+  border: 0;
+  background: transparent;
+
+  color: #888;
+
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lumora-message-close:hover {
+  color: #171717;
+  transform: rotate(90deg);
+}
+
+.lumora-message-icon {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.lumora-message-icon.info {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.lumora-message-label {
+  margin-bottom: 9px;
+
+  color: #999;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.lumora-message-popup h2 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 27px;
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+}
+
+.lumora-message-popup p {
+  max-width: 340px;
+
+  margin: 14px auto 27px;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.lumora-message-button {
+  width: 100%;
+  min-height: 48px;
+
+  border: 1px solid #171717;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lumora-message-button:hover {
+  background: #2b2b2b;
+
+  transform: translateY(-1px);
+}
+
+@keyframes lumora-message-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lumora-message-popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .lumora-message-popup {
+    padding: 38px 24px 26px;
+  }
+
+  .lumora-message-popup h2 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumora-message-overlay,
+  .lumora-message-popup {
+    animation: none;
+  }
+
+  .lumora-message-button,
+  .lumora-message-close {
+    transition: none;
+  }
+}

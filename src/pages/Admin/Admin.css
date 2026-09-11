@@ -1,0 +1,4726 @@
+/* ============================================================
+   LUMORA ADMIN PANEL
+   ============================================================ */
+
+.admin-shell {
+  min-height: 100vh;
+  background: #f5f1e8;
+  color: #171717;
+  display: flex;
+  font-family: inherit;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.admin-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #111111;
+  color: #f8f4eb;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 32px 20px 22px;
+}
+
+.admin-sidebar-brand {
+  padding: 4px 12px 38px;
+}
+
+.admin-logo {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.admin-logo-subtitle {
+  margin-top: 7px;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  opacity: 0.5;
+}
+
+.admin-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-nav-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+  padding: 0 13px 12px;
+}
+
+.admin-nav-link {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 13px;
+  border-radius: 8px;
+  color: rgba(248, 244, 235, 0.62);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.25s ease;
+}
+
+.admin-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.admin-nav-link-active {
+  color: #111111;
+  background: #eee6d7;
+}
+
+.admin-nav-link-active:hover {
+  color: #111111;
+  background: #eee6d7;
+}
+
+.admin-sidebar-bottom {
+  margin-top: auto;
+}
+
+.admin-user-box {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 15px 10px;
+  margin-bottom: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eee6d7;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.admin-user-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-user-info strong {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-user-info span {
+  font-size: 9px;
+  opacity: 0.45;
+  letter-spacing: 0.1em;
+}
+
+.admin-logout-button {
+  width: 100%;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  color: rgba(248, 244, 235, 0.55);
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 12px;
+  transition: 0.25s ease;
+}
+
+.admin-logout-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.admin-main {
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+.admin-topbar {
+  min-height: 92px;
+  padding: 22px 42px;
+  background: rgba(255, 255, 255, 0.58);
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-topbar-label {
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  opacity: 0.4;
+}
+
+.admin-topbar h1 {
+  margin: 5px 0 0;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.admin-topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-topbar-user > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-topbar-user strong {
+  font-size: 12px;
+}
+
+.admin-topbar-user span {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  opacity: 0.45;
+}
+
+.admin-content {
+  padding: 42px;
+}
+
+/* ============================================================
+   PAGE HEADING
+   ============================================================ */
+
+.admin-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-eyebrow {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.23em;
+  opacity: 0.45;
+  margin-bottom: 8px;
+}
+
+.admin-page-heading h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.admin-page-heading p {
+  margin: 9px 0 0;
+  color: #777269;
+  font-size: 13px;
+}
+
+.admin-refresh-button {
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid rgba(23, 23, 23, 0.16);
+  background: #ffffff;
+  color: #171717;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: 0.25s ease;
+}
+
+.admin-refresh-button:hover {
+  background: #171717;
+  color: #ffffff;
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-stat-card {
+  min-height: 145px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(23, 23, 23, 0.07);
+}
+
+.admin-stat-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 8px;
+  background: #f1ece2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-stat-content span {
+  font-size: 10px;
+  color: #858078;
+}
+
+.admin-stat-content strong {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.admin-stat-arrow {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  opacity: 0.28;
+}
+
+.admin-stat-revenue {
+  background: #171717;
+  color: #f8f4eb;
+}
+
+.admin-stat-revenue .admin-stat-icon {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-stat-revenue .admin-stat-content span {
+  color: rgba(248, 244, 235, 0.5);
+}
+
+.admin-stat-revenue .admin-stat-arrow {
+  color: #f8f4eb;
+}
+
+/* ============================================================
+   DASHBOARD GRID
+   ============================================================ */
+
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 18px;
+}
+
+.admin-panel-card {
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-panel-header {
+  min-height: 82px;
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.07);
+}
+
+.admin-panel-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.admin-panel-header > svg {
+  opacity: 0.3;
+}
+
+/* ============================================================
+   UPCOMING BOOKINGS
+   ============================================================ */
+
+.admin-booking-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-booking-row {
+  min-height: 82px;
+  padding: 15px 22px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto auto;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+}
+
+.admin-booking-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-booking-main,
+.admin-booking-date {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-booking-main strong,
+.admin-booking-date strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-booking-main span,
+.admin-booking-date span {
+  font-size: 10px;
+  color: #89847b;
+}
+
+.admin-booking-guests {
+  font-size: 9px;
+  color: #777269;
+  white-space: nowrap;
+}
+
+.admin-booking-amount {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   RECENT
+   ============================================================ */
+
+.admin-recent-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-recent-row {
+  min-height: 67px;
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: 65px 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+}
+
+.admin-recent-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-recent-row > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-recent-row > div:first-child strong {
+  font-size: 11px;
+}
+
+.admin-recent-row > div:first-child span {
+  font-size: 9px;
+  color: #858078;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-recent-user {
+  font-size: 10px;
+  color: #777269;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-status {
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  padding: 5px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.admin-status-confirmed {
+  background: #e7f2e8;
+  color: #35653b;
+}
+
+.admin-status-cancelled {
+  background: #f4e5e2;
+  color: #874b42;
+}
+
+.admin-status-completed {
+  background: #e8edf2;
+  color: #42566c;
+}
+
+.admin-status-pending {
+  background: #f5eedb;
+  color: #77622d;
+}
+
+.admin-recent-amount {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   EMPTY / LOADING / ERROR
+   ============================================================ */
+
+.admin-empty-state {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #8a857d;
+}
+
+.admin-empty-state svg {
+  opacity: 0.3;
+}
+
+.admin-empty-state p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.admin-loading {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-loader {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(23, 23, 23, 0.12);
+  border-top-color: #171717;
+  border-radius: 50%;
+  animation: admin-spin 0.8s linear infinite;
+}
+
+.admin-loading p {
+  margin: 0;
+  font-size: 11px;
+  color: #777269;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-error {
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+}
+
+.admin-error h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.admin-error p {
+  margin: 0 0 20px;
+  color: #777269;
+  font-size: 12px;
+}
+
+.admin-retry-button {
+  height: 40px;
+  padding: 0 18px;
+  background: #171717;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ============================================================
+   MOBILE HEADER
+   ============================================================ */
+
+.admin-mobile-header {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .admin-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .admin-mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #111111;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    z-index: 200;
+  }
+
+  .admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .admin-brand span {
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+  }
+
+  .admin-brand small {
+    font-size: 7px;
+    letter-spacing: 0.16em;
+    opacity: 0.5;
+  }
+
+  .admin-menu-button {
+    width: 38px;
+    height: 38px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .admin-main {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 60px;
+  }
+
+  .admin-topbar {
+    display: none;
+  }
+
+  .admin-content {
+    padding: 28px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-page-heading h2 {
+    font-size: 28px;
+  }
+
+  .admin-refresh-button {
+    width: 100%;
+  }
+
+  .admin-booking-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .admin-booking-guests,
+  .admin-booking-amount {
+    grid-column: span 1;
+  }
+
+  .admin-recent-row {
+    grid-template-columns: 55px 1fr auto;
+  }
+
+  .admin-recent-user {
+    display: none;
+  }
+
+  .admin-recent-amount {
+    display: none;
+  }
+}
+/* ============================================================
+   ADMIN BOOKINGS TABLE
+   ============================================================ */
+
+.admin-bookings-page {
+  width: 100%;
+}
+
+.admin-bookings-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+}
+
+.admin-bookings-search {
+  width: 330px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  background: #f7f4ed;
+  border: 1px solid rgba(23, 23, 23, 0.07);
+  border-radius: 6px;
+  color: #777269;
+}
+
+.admin-bookings-search svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.admin-bookings-search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.admin-bookings-search input::placeholder {
+  color: #99948c;
+}
+
+.admin-bookings-filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.admin-bookings-filters button {
+  height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: #ffffff;
+  color: #777269;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.admin-bookings-filters button:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-bookings-filters button.admin-filter-active {
+  background: #171717;
+  color: #ffffff;
+  border-color: #171717;
+}
+
+.admin-bookings-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 2px 10px;
+  color: #8a857d;
+  font-size: 10px;
+}
+
+.admin-bookings-meta strong {
+  color: #171717;
+  font-weight: 600;
+}
+
+.admin-table-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.admin-bookings-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-bookings-table thead {
+  background: #f7f4ed;
+}
+
+.admin-bookings-table th {
+  height: 48px;
+  padding: 0 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+  color: #817b72;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.admin-bookings-table td {
+  height: 72px;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+  color: #171717;
+  font-size: 10px;
+}
+
+.admin-bookings-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-bookings-table tbody tr:hover {
+  background: #faf8f3;
+}
+
+.admin-bookings-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* COLUMN WIDTHS */
+
+.admin-bookings-table th:nth-child(1),
+.admin-bookings-table td:nth-child(1) {
+  width: 105px;
+}
+
+.admin-bookings-table th:nth-child(2),
+.admin-bookings-table td:nth-child(2) {
+  width: 190px;
+}
+
+.admin-bookings-table th:nth-child(3),
+.admin-bookings-table td:nth-child(3) {
+  width: 155px;
+}
+
+.admin-bookings-table th:nth-child(4),
+.admin-bookings-table td:nth-child(4) {
+  width: 145px;
+}
+
+.admin-bookings-table th:nth-child(5),
+.admin-bookings-table td:nth-child(5) {
+  width: 65px;
+  text-align: center;
+}
+
+.admin-bookings-table th:nth-child(6),
+.admin-bookings-table td:nth-child(6) {
+  width: 95px;
+}
+
+.admin-bookings-table th:nth-child(7),
+.admin-bookings-table td:nth-child(7) {
+  width: 105px;
+}
+
+.admin-bookings-table th:nth-child(8),
+.admin-bookings-table td:nth-child(8) {
+  width: 65px;
+  text-align: center;
+}
+
+/* BOOKING */
+
+.admin-table-booking-id,
+.admin-table-customer,
+.admin-table-restaurant,
+.admin-table-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.admin-table-booking-id strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-table-booking-id span {
+  color: #8a857d;
+  font-size: 9px;
+}
+
+/* CUSTOMER */
+
+.admin-table-customer strong {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-table-customer span {
+  max-width: 175px;
+  color: #89847b;
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* RESTAURANT */
+
+.admin-table-restaurant strong {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-table-restaurant span {
+  color: #89847b;
+  font-size: 9px;
+}
+
+/* DATE & TIME */
+
+.admin-table-datetime strong {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-table-datetime span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #89847b;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.admin-table-datetime svg {
+  opacity: 0.55;
+}
+
+/* GUESTS */
+
+.admin-table-guests {
+  display: inline-flex;
+  min-width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  background: #f1ece2;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* AMOUNT */
+
+.admin-table-amount {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* STATUS */
+
+.admin-bookings-table .admin-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* VIEW BUTTON */
+
+.admin-view-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: #f7f4ed;
+  color: #171717;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-view-button:hover {
+  background: #171717;
+  color: #ffffff;
+  border-color: #171717;
+}
+
+/* EMPTY TABLE */
+
+.admin-table-empty {
+  height: 260px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.admin-table-empty svg {
+  display: block;
+  margin: 0 auto 10px;
+  opacity: 0.3;
+}
+
+.admin-table-empty strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.admin-table-empty span {
+  display: block;
+  color: #89847b;
+  font-size: 10px;
+}
+/* ADMIN USERS */
+
+.admin-users-page {
+  width: 100%;
+}
+
+.admin-users-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+}
+
+.admin-users-search {
+  width: 330px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  background: #f7f4ed;
+  border: 1px solid rgba(23, 23, 23, 0.07);
+  border-radius: 6px;
+  color: #777269;
+}
+
+.admin-users-search svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.admin-users-search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.admin-users-search input::placeholder {
+  color: #99948c;
+}
+
+.admin-users-filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.admin-users-filters button {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: #fff;
+  color: #777269;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.admin-users-filters button:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-users-filters button.admin-filter-active {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+.admin-users-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 2px 10px;
+  color: #8a857d;
+  font-size: 10px;
+}
+
+.admin-users-meta strong {
+  color: #171717;
+  font-weight: 600;
+}
+
+.admin-users-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-users-table thead {
+  background: #f7f4ed;
+}
+
+.admin-users-table th {
+  height: 48px;
+  padding: 0 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+  color: #817b72;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.admin-users-table td {
+  height: 72px;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+  color: #171717;
+  font-size: 10px;
+}
+
+.admin-users-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-users-table tbody tr:hover {
+  background: #faf8f3;
+}
+
+.admin-users-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-users-table th:nth-child(1),
+.admin-users-table td:nth-child(1) {
+  width: 240px;
+}
+
+.admin-users-table th:nth-child(2),
+.admin-users-table td:nth-child(2) {
+  width: 270px;
+}
+
+.admin-users-table th:nth-child(3),
+.admin-users-table td:nth-child(3) {
+  width: 135px;
+}
+
+.admin-users-table th:nth-child(4),
+.admin-users-table td:nth-child(4) {
+  width: 150px;
+}
+
+.admin-users-table th:nth-child(5),
+.admin-users-table td:nth-child(5) {
+  width: 90px;
+}
+
+.admin-user-table-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.admin-user-table-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171717;
+  color: #f8f4eb;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-user-table-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-user-table-info strong {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-user-table-info span {
+  color: #89847b;
+  font-size: 9px;
+}
+
+.admin-user-table-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: #777269;
+}
+
+.admin-user-table-email svg {
+  flex-shrink: 0;
+  opacity: 0.45;
+}
+
+.admin-user-table-email span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-user-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 25px;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.admin-user-role-admin {
+  background: #171717;
+  color: #fff;
+}
+
+.admin-user-role-customer {
+  background: #f1ece2;
+  color: #5f594f;
+}
+
+.admin-user-table-date {
+  color: #777269;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.admin-user-table-id {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .admin-users-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-users-search {
+    width: 100%;
+  }
+
+  .admin-users-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .admin-users-filters button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-users-meta {
+    justify-content: flex-start;
+  }
+
+  .admin-users-table {
+    min-width: 850px;
+  }
+}
+/* ADMIN RESTAURANTS */
+
+.admin-restaurants-page {
+  width: 100%;
+}
+
+.admin-restaurants-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+}
+
+.admin-restaurants-search {
+  width: 330px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  background: #f7f4ed;
+  border: 1px solid rgba(23, 23, 23, 0.07);
+  border-radius: 6px;
+  color: #777269;
+}
+
+.admin-restaurants-search svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.admin-restaurants-search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.admin-restaurants-search input::placeholder {
+  color: #99948c;
+}
+
+.admin-restaurants-filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.admin-restaurants-filters button {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: #fff;
+  color: #777269;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.admin-restaurants-filters button:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-restaurants-filters button.admin-filter-active {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+.admin-restaurants-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 2px 10px;
+  color: #8a857d;
+  font-size: 10px;
+}
+
+.admin-restaurants-meta strong {
+  color: #171717;
+  font-weight: 600;
+}
+
+.admin-restaurants-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-restaurants-table thead {
+  background: #f7f4ed;
+}
+
+.admin-restaurants-table th {
+  height: 48px;
+  padding: 0 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+  color: #817b72;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.admin-restaurants-table td {
+  height: 82px;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+  color: #171717;
+  font-size: 10px;
+}
+
+.admin-restaurants-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-restaurants-table tbody tr:hover {
+  background: #faf8f3;
+}
+
+.admin-restaurants-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-restaurants-table th:nth-child(1),
+.admin-restaurants-table td:nth-child(1) {
+  width: 245px;
+}
+
+.admin-restaurants-table th:nth-child(2),
+.admin-restaurants-table td:nth-child(2) {
+  width: 190px;
+}
+
+.admin-restaurants-table th:nth-child(3),
+.admin-restaurants-table td:nth-child(3) {
+  width: 230px;
+}
+
+.admin-restaurants-table th:nth-child(4),
+.admin-restaurants-table td:nth-child(4) {
+  width: 100px;
+}
+
+.admin-restaurants-table th:nth-child(5),
+.admin-restaurants-table td:nth-child(5) {
+  width: 120px;
+}
+
+.admin-restaurants-table th:nth-child(6),
+.admin-restaurants-table td:nth-child(6) {
+  width: 105px;
+}
+
+.admin-restaurant-table-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.admin-restaurant-image-wrapper {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #f1ece2;
+}
+
+.admin-restaurant-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.admin-restaurant-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777269;
+}
+
+.admin-restaurant-table-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-restaurant-table-info strong {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-restaurant-table-info span {
+  color: #89847b;
+  font-size: 9px;
+}
+
+.admin-restaurant-cuisine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777269;
+}
+
+.admin-restaurant-cuisine svg {
+  flex-shrink: 0;
+  opacity: 0.45;
+}
+
+.admin-restaurant-cuisine span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-restaurant-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.admin-restaurant-location > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.45;
+}
+
+.admin-restaurant-location > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-restaurant-location strong {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admin-restaurant-location span {
+  color: #89847b;
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-restaurant-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-restaurant-rating svg {
+  opacity: 0.7;
+}
+
+.admin-restaurant-rating strong {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admin-restaurant-price {
+  color: #777269;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-restaurant-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  height: 25px;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.admin-restaurant-status-active {
+  background: #e9f1e8;
+  color: #536b50;
+}
+
+.admin-restaurant-status-inactive {
+  background: #f1e9e5;
+  color: #80665d;
+}
+
+@media (max-width: 900px) {
+  .admin-restaurants-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-restaurants-search {
+    width: 100%;
+  }
+
+  .admin-restaurants-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .admin-restaurants-filters button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-restaurants-meta {
+    justify-content: flex-start;
+  }
+
+  .admin-restaurants-table {
+    min-width: 1000px;
+  }
+}
+/* =========================================================
+   ADMIN PAYMENTS
+   ========================================================= */
+
+.admin-payments-page {
+  width: 100%;
+}
+
+/* TOOLBAR */
+
+.admin-payments-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 10px;
+}
+
+.admin-payments-search {
+  width: 330px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 13px;
+
+  background: #f7f4ed;
+  border: 1px solid rgba(23, 23, 23, 0.07);
+  border-radius: 6px;
+
+  color: #777269;
+}
+
+.admin-payments-search svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.admin-payments-search input {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #171717;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.admin-payments-search input::placeholder {
+  color: #99948c;
+}
+
+/* FILTERS */
+
+.admin-payments-filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.admin-payments-filters button {
+  height: 34px;
+  padding: 0 12px;
+
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: #fff;
+  color: #777269;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+
+  transition: all 0.2s ease;
+}
+
+.admin-payments-filters button:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-payments-filters button.admin-filter-active {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+/* META */
+
+.admin-payments-meta {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0 2px 10px;
+
+  color: #8a857d;
+  font-size: 10px;
+}
+
+.admin-payments-meta strong {
+  color: #171717;
+  font-weight: 600;
+}
+
+/* TABLE */
+
+.admin-payments-table {
+  width: 100%;
+  min-width: 1050px;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-payments-table thead {
+  background: #f7f4ed;
+}
+
+.admin-payments-table th {
+  height: 48px;
+
+  padding: 0 15px;
+
+  text-align: left;
+  vertical-align: middle;
+
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+
+  color: #817b72;
+
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+
+  white-space: nowrap;
+}
+
+.admin-payments-table td {
+  height: 76px;
+
+  padding: 12px 15px;
+
+  text-align: left;
+  vertical-align: middle;
+
+  border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+
+  color: #171717;
+
+  font-size: 10px;
+}
+
+.admin-payments-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-payments-table tbody tr:hover {
+  background: #faf8f3;
+}
+
+.admin-payments-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* COLUMN WIDTHS */
+
+.admin-payments-table th:nth-child(1),
+.admin-payments-table td:nth-child(1) {
+  width: 170px;
+}
+
+.admin-payments-table th:nth-child(2),
+.admin-payments-table td:nth-child(2) {
+  width: 105px;
+}
+
+.admin-payments-table th:nth-child(3),
+.admin-payments-table td:nth-child(3) {
+  width: 220px;
+}
+
+.admin-payments-table th:nth-child(4),
+.admin-payments-table td:nth-child(4) {
+  width: 180px;
+}
+
+.admin-payments-table th:nth-child(5),
+.admin-payments-table td:nth-child(5) {
+  width: 110px;
+}
+
+.admin-payments-table th:nth-child(6),
+.admin-payments-table td:nth-child(6) {
+  width: 110px;
+}
+
+.admin-payments-table th:nth-child(7),
+.admin-payments-table td:nth-child(7) {
+  width: 130px;
+}
+
+/* PAYMENT ID */
+
+.admin-payment-table-id {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.admin-payment-table-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1ece2;
+  color: #171717;
+
+  border-radius: 6px;
+}
+
+.admin-payment-table-id > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-payment-table-id strong {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admin-payment-table-id span {
+  color: #89847b;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* BOOKING */
+
+.admin-payment-booking {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #777269;
+}
+
+.admin-payment-booking svg {
+  opacity: 0.5;
+}
+
+.admin-payment-booking strong {
+  color: #171717;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* CUSTOMER */
+
+.admin-payment-customer {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-payment-customer strong {
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-payment-customer span {
+  max-width: 190px;
+
+  color: #89847b;
+  font-size: 9px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* RESTAURANT */
+
+.admin-payment-restaurant {
+  display: block;
+
+  color: #777269;
+  font-size: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* AMOUNT */
+
+.admin-payment-amount {
+  color: #171717;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* STATUS */
+
+.admin-payments-table .admin-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 62px;
+}
+
+/* DATE */
+
+.admin-payment-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-payment-date strong {
+  font-size: 9px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.admin-payment-date span {
+  color: #89847b;
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .admin-payments-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-payments-search {
+    width: 100%;
+  }
+
+  .admin-payments-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .admin-payments-filters button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-payments-meta {
+    justify-content: flex-start;
+  }
+
+  .admin-payments-table {
+    min-width: 1050px;
+  }
+}
+/* =========================================================
+   ADMIN RESTAURANT STATUS ACTION
+   ========================================================= */
+
+.admin-restaurant-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-restaurant-status-button {
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border-radius: 5px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+
+  background: #fff;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-restaurant-status-button-disable {
+  color: #777269;
+}
+
+.admin-restaurant-status-button-disable:hover {
+  background: #f3eee4;
+  color: #171717;
+  border-color: rgba(23, 23, 23, 0.18);
+}
+
+.admin-restaurant-status-button-enable {
+  color: #171717;
+}
+
+.admin-restaurant-status-button-enable:hover {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+@media (max-width: 700px) {
+  .admin-restaurant-status-cell {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* =========================================================
+   ADMIN RESTAURANT EDIT
+   ========================================================= */
+
+.admin-restaurant-edit-button {
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 0 10px;
+
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  border-radius: 5px;
+
+  background: #fff;
+  color: #171717;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-restaurant-edit-button:hover {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+/* =========================================================
+   EDIT MODAL
+   ========================================================= */
+
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(23, 23, 23, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.admin-restaurant-edit-modal {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  background: #fff;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  border-radius: 10px;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.2);
+}
+
+.admin-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 26px;
+
+  border-bottom: 1px solid
+    rgba(23, 23, 23, 0.08);
+}
+
+.admin-modal-header h3 {
+  margin: 5px 0 4px;
+
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  color: #171717;
+}
+
+.admin-modal-header p {
+  margin: 0;
+
+  font-size: 12px;
+  color: #777269;
+}
+
+.admin-modal-close {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid
+    rgba(23, 23, 23, 0.1);
+  border-radius: 6px;
+
+  background: #fff;
+  color: #777269;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-modal-close:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-restaurant-edit-form {
+  padding: 24px 26px 26px;
+}
+
+.admin-edit-form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-form-group-full {
+  margin-top: 18px;
+}
+
+.admin-form-group label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #777269;
+}
+
+.admin-form-group input,
+.admin-form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid
+    rgba(23, 23, 23, 0.13);
+  border-radius: 6px;
+
+  background: #fff;
+  color: #171717;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-form-group textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+  border-color: #171717;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(23, 23, 23, 0.06);
+}
+
+.admin-edit-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+
+  margin-top: 24px;
+  padding-top: 20px;
+
+  border-top: 1px solid
+    rgba(23, 23, 23, 0.08);
+}
+
+.admin-edit-cancel-button,
+.admin-edit-save-button {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-edit-cancel-button {
+  border: 1px solid
+    rgba(23, 23, 23, 0.12);
+
+  background: #fff;
+  color: #777269;
+}
+
+.admin-edit-cancel-button:hover {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.admin-edit-save-button {
+  border: 1px solid #171717;
+
+  background: #171717;
+  color: #fff;
+}
+
+.admin-edit-save-button:hover {
+  background: #333;
+}
+
+.admin-edit-cancel-button:disabled,
+.admin-edit-save-button:disabled,
+.admin-modal-close:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EDIT RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-modal-overlay {
+    padding: 12px;
+  }
+
+  .admin-restaurant-edit-modal {
+    max-height: calc(100vh - 24px);
+  }
+
+  .admin-modal-header {
+    padding: 20px;
+  }
+
+  .admin-restaurant-edit-form {
+    padding: 20px;
+  }
+
+  .admin-edit-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-edit-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-edit-cancel-button,
+  .admin-edit-save-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   ADMIN USER ROLE ACTION
+   ========================================================= */
+
+.admin-user-role-button {
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 0 10px;
+
+  border-radius: 5px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+
+  background: #fff;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-user-role-button-promote {
+  color: #171717;
+}
+
+.admin-user-role-button-promote:hover {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+.admin-user-role-button-demote {
+  color: #777269;
+}
+
+.admin-user-role-button-demote:hover {
+  background: #f3eee4;
+  color: #171717;
+  border-color: rgba(23, 23, 23, 0.18);
+}
+
+.admin-user-role-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .admin-user-role-button {
+    width: 100%;
+    min-width: 105px;
+  }
+}
+/* =========================================================
+   ADMIN BOOKING ACTIONS
+   ========================================================= */
+
+.admin-booking-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.admin-booking-cancel-button {
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border: 1px solid rgba(150, 70, 50, 0.2);
+  border-radius: 5px;
+
+  background: #fff;
+  color: #8a5142;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-booking-cancel-button:hover {
+  background: #8a5142;
+  color: #fff;
+  border-color: #8a5142;
+}
+
+.admin-booking-cancel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .admin-booking-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-booking-cancel-button {
+    width: 100%;
+  }
+}
+/* ============================================================
+   ADMIN PAYMENT REFUND ACTION
+   ============================================================ */
+
+.admin-payment-refund-button {
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 10px;
+  border: 1px solid rgba(138, 81, 66, 0.22);
+  border-radius: 5px;
+  background: #fff;
+  color: #8a5142;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-payment-refund-button:hover {
+  background: #8a5142;
+  color: #fff;
+  border-color: #8a5142;
+}
+
+.admin-payment-refund-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-payment-no-action {
+  color: #aaa;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .admin-payment-refund-button {
+    width: 100%;
+    min-width: 85px;
+  }
+}
+/* ============================================================
+   LUMORA ADMIN DASHBOARD
+   Luxury Cream + Black Theme
+   ============================================================ */
+
+.admin-dashboard {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px;
+  background: #f6f4ef;
+  color: #171717;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   PAGE HEADING
+   ============================================================ */
+
+.admin-page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.admin-page-heading h2 {
+  margin: 6px 0 6px;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #171717;
+}
+
+.admin-page-heading p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #777269;
+}
+
+.admin-eyebrow {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a847b;
+}
+
+/* ============================================================
+   REFRESH BUTTON
+   ============================================================ */
+
+.admin-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 14px;
+
+  border: 1px solid #d8d4cc;
+  border-radius: 6px;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-refresh-button:hover {
+  background: #2c2c2c;
+  border-color: #2c2c2c;
+  transform: translateY(-1px);
+}
+
+.admin-refresh-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================
+   MAIN STATS
+   ============================================================ */
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.admin-stat-card {
+  position: relative;
+
+  min-height: 126px;
+  padding: 20px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  border: 1px solid #e0ddd6;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #cfcac1;
+  box-shadow: 0 10px 28px rgba(23, 23, 23, 0.06);
+}
+
+.admin-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #e0ddd6;
+  border-radius: 7px;
+
+  background: #f7f5f0;
+  color: #171717;
+}
+
+.admin-stat-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.admin-stat-content span {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #777269;
+}
+
+.admin-stat-content strong {
+  margin-top: 9px;
+
+  font-size: 25px;
+  line-height: 1;
+
+  font-weight: 600;
+  letter-spacing: -0.04em;
+
+  color: #171717;
+}
+
+.admin-stat-arrow {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+
+  color: #aaa49b;
+}
+
+.admin-stat-revenue {
+  background: #171717;
+  border-color: #171717;
+}
+
+.admin-stat-revenue .admin-stat-icon {
+  background: #2b2b2b;
+  border-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.admin-stat-revenue .admin-stat-content span {
+  color: #aaa49b;
+}
+
+.admin-stat-revenue .admin-stat-content strong {
+  color: #ffffff;
+}
+
+.admin-stat-revenue .admin-stat-arrow {
+  color: #aaa49b;
+}
+
+/* ============================================================
+   DASHBOARD CONTENT GRID
+   ============================================================ */
+
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ============================================================
+   PANEL CARD
+   ============================================================ */
+
+.admin-panel-card {
+  min-width: 0;
+
+  border: 1px solid #e0ddd6;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+.admin-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #ece9e3;
+}
+
+.admin-panel-header h3 {
+  margin: 6px 0 0;
+
+  font-size: 18px;
+  line-height: 1.2;
+
+  font-weight: 600;
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+.admin-panel-header > svg {
+  flex-shrink: 0;
+  color: #8b857c;
+}
+
+/* ============================================================
+   UPCOMING BOOKINGS
+   ============================================================ */
+
+.admin-booking-list {
+  width: 100%;
+}
+
+.admin-booking-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 1.5fr)
+    minmax(110px, 1fr)
+    minmax(70px, 0.7fr)
+    minmax(80px, 0.8fr);
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #efede8;
+
+  transition: background 0.2s ease;
+}
+
+.admin-booking-row:last-child {
+  border-bottom: none;
+}
+
+.admin-booking-row:hover {
+  background: #faf9f6;
+}
+
+.admin-booking-main {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-booking-main strong {
+  overflow: hidden;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #171717;
+}
+
+.admin-booking-main span {
+  overflow: hidden;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #8a847b;
+}
+
+.admin-booking-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-booking-date strong {
+  font-size: 11px;
+  font-weight: 600;
+  color: #292929;
+}
+
+.admin-booking-date span {
+  font-size: 10px;
+  color: #8a847b;
+}
+
+.admin-booking-guests {
+  font-size: 10px;
+  color: #777269;
+}
+
+.admin-booking-amount {
+  text-align: right;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #171717;
+}
+
+/* ============================================================
+   RECENT BOOKINGS
+   ============================================================ */
+
+.admin-recent-list {
+  width: 100%;
+}
+
+.admin-recent-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(100px, 1.3fr)
+    minmax(100px, 1fr)
+    minmax(80px, 0.8fr)
+    minmax(80px, 0.8fr);
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  border-bottom: 1px solid #efede8;
+
+  transition: background 0.2s ease;
+}
+
+.admin-recent-row:last-child {
+  border-bottom: none;
+}
+
+.admin-recent-row:hover {
+  background: #faf9f6;
+}
+
+.admin-recent-row > div:first-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-recent-row > div:first-child strong {
+  font-size: 10px;
+  font-weight: 600;
+  color: #171717;
+}
+
+.admin-recent-row > div:first-child span {
+  overflow: hidden;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #777269;
+}
+
+.admin-recent-user {
+  overflow: hidden;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #777269;
+}
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.admin-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* CONFIRMED */
+
+.admin-status-confirmed {
+  background: #e9f3ea;
+  color: #32623a;
+}
+
+/* PENDING */
+
+.admin-status-pending {
+  background: #f5f0df;
+  color: #806d2c;
+}
+
+/* CANCELLED */
+
+.admin-status-cancelled {
+  background: #f4e8e7;
+  color: #8a403b;
+}
+
+/* COMPLETED */
+
+.admin-status-completed {
+  background: #e9e9e7;
+  color: #55534e;
+}
+
+/* REFUNDED */
+
+.admin-status-refunded {
+  background: #eee8f4;
+  color: #68477d;
+}
+
+.admin-recent-amount {
+  text-align: right;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #171717;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.admin-empty-state {
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: #aaa49b;
+}
+
+.admin-empty-state svg {
+  color: #b3aea6;
+}
+
+.admin-empty-state p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  color: #8a847b;
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.admin-loading {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  background: #f6f4ef;
+
+  color: #777269;
+}
+
+.admin-loading p {
+  margin: 0;
+
+  font-size: 12px;
+}
+
+.admin-loader {
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid #dedbd4;
+  border-top-color: #171717;
+
+  border-radius: 50%;
+
+  animation: adminDashboardSpin 0.8s linear infinite;
+}
+
+@keyframes adminDashboardSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.admin-error {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #f6f4ef;
+}
+
+.admin-error h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #171717;
+}
+
+.admin-error p {
+  max-width: 500px;
+
+  margin: 0 0 18px;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  color: #777269;
+}
+
+.admin-retry-button {
+  min-height: 36px;
+
+  padding: 0 16px;
+
+  border: 1px solid #171717;
+  border-radius: 6px;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-retry-button:hover {
+  background: #2c2c2c;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   RESPONSIVE - TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ============================================================
+   RESPONSIVE - MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .admin-dashboard {
+    padding: 18px;
+  }
+
+  .admin-page-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-page-heading h2 {
+    font-size: 26px;
+  }
+
+  .admin-refresh-button {
+    width: fit-content;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stat-card {
+    min-height: 105px;
+  }
+
+  .admin-booking-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .admin-booking-amount {
+    text-align: left;
+  }
+
+  .admin-recent-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .admin-recent-amount {
+    text-align: left;
+  }
+
+}
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .admin-dashboard {
+    padding: 14px;
+  }
+
+  .admin-page-heading h2 {
+    font-size: 24px;
+  }
+
+  .admin-page-heading p {
+    font-size: 12px;
+  }
+
+  .admin-stat-card {
+    padding: 17px;
+  }
+
+  .admin-stat-content strong {
+    font-size: 23px;
+  }
+
+  .admin-panel-header {
+    padding: 17px;
+  }
+
+  .admin-panel-header h3 {
+    font-size: 16px;
+  }
+
+  .admin-booking-row {
+    grid-template-columns: 1fr;
+    padding: 15px 17px;
+  }
+
+  .admin-booking-amount {
+    text-align: left;
+  }
+
+  .admin-recent-row {
+    grid-template-columns: 1fr;
+    padding: 14px 17px;
+  }
+
+  .admin-recent-amount {
+    text-align: left;
+  }
+
+}
+/* ============================================================
+   BUSINESS ANALYTICS
+   ============================================================ */
+
+.admin-analytics-section {
+  margin-top: 28px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 20px;
+}
+
+.admin-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.admin-section-heading h3 {
+  margin: 5px 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.admin-section-heading p {
+  margin: 0;
+  color: #77736d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.admin-section-heading > svg {
+  flex-shrink: 0;
+  color: #111111;
+}
+
+/* ============================================================
+   ANALYTICS GRID
+   ============================================================ */
+
+.admin-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.admin-analytics-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 92px;
+  padding: 18px;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  border-radius: 16px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-analytics-card:hover {
+  transform: translateY(-2px);
+  border-color: #cfc9bf;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.admin-analytics-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #111111;
+  color: #ffffff;
+}
+
+.admin-analytics-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-analytics-content span {
+  margin-bottom: 5px;
+  color: #77736d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-analytics-content strong {
+  color: #111111;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.admin-analytics-content small {
+  margin-top: 3px;
+  color: #99938b;
+  font-size: 11px;
+}
+
+/* ============================================================
+   ANALYTICS RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .admin-analytics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-analytics-section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .admin-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .admin-section-heading h3 {
+    font-size: 19px;
+  }
+
+  .admin-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-analytics-card {
+    min-height: 82px;
+  }
+}
+/* ============================================================
+   LAST 7 DAYS CHART
+============================================================ */
+
+.admin-chart-section {
+  margin-top: 28px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 20px;
+}
+
+.admin-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-chart-card {
+  padding: 22px;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  border-radius: 18px;
+}
+
+.admin-chart-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-chart-card-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-chart-card-header span {
+  color: #77736d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-chart-card-header strong {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.admin-chart-card-header > svg {
+  color: #111111;
+}
+
+.admin-bar-chart {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  height: 220px;
+  padding-top: 8px;
+}
+
+.admin-bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  height: 100%;
+}
+
+.admin-bar-value {
+  min-height: 18px;
+  margin-bottom: 7px;
+  color: #55514b;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.admin-bar-track {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: 42px;
+  height: 145px;
+  overflow: hidden;
+  background: #eeece7;
+  border-radius: 10px 10px 5px 5px;
+}
+
+.admin-bar-fill {
+  width: 100%;
+  min-height: 4px;
+  background: #111111;
+  border-radius: 10px 10px 5px 5px;
+  transition:
+    height 0.5s ease,
+    opacity 0.2s ease;
+}
+
+.admin-bar-column:hover .admin-bar-fill {
+  opacity: 0.72;
+}
+
+.admin-bar-column > span {
+  margin-top: 9px;
+  color: #77736d;
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CHART RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .admin-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-chart-section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .admin-chart-card {
+    padding: 18px;
+  }
+
+  .admin-bar-chart {
+    gap: 6px;
+    height: 205px;
+  }
+
+  .admin-bar-track {
+    max-width: 32px;
+    height: 135px;
+  }
+
+  .admin-bar-value {
+    font-size: 9px;
+  }
+
+  .admin-bar-column > span {
+    font-size: 9px;
+  }
+}
+/* ============================================================
+   CHART PREMIUM HOVER ENHANCEMENT
+============================================================ */
+
+.admin-chart-card {
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-chart-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(23, 23, 23, 0.14);
+  box-shadow: 0 16px 35px rgba(23, 23, 23, 0.07);
+}
+
+.admin-bar-column {
+  position: relative;
+  cursor: default;
+}
+
+.admin-bar-column:hover .admin-bar-value {
+  color: #171717;
+  transform: translateY(-1px);
+}
+
+.admin-bar-value {
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-bar-track {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-bar-column:hover .admin-bar-track {
+  background: #e7e3db;
+  transform: scaleX(1.04);
+}
+
+.admin-bar-column:hover .admin-bar-fill {
+  opacity: 1;
+}
+
+/* Subtle chart entrance animation */
+
+.admin-chart-card {
+  animation: admin-chart-enter 0.45s ease both;
+}
+
+.admin-chart-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+@keyframes admin-chart-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced-motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-chart-card,
+  .admin-bar-fill,
+  .admin-bar-value,
+  .admin-bar-track {
+    animation: none;
+    transition: none;
+  }
+}
+/* ============================================================
+   QUICK ACTIONS
+============================================================ */
+
+.admin-quick-actions-section {
+  margin-top: 28px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 20px;
+}
+
+.admin-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-quick-action-card {
+  width: 100%;
+  min-width: 0;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  border-radius: 16px;
+  color: #111111;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-quick-action-card:hover {
+  transform: translateY(-3px);
+  border-color: #cfc9bf;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.admin-quick-action-card > svg {
+  flex-shrink: 0;
+  color: #111111;
+  transition: transform 0.2s ease;
+}
+
+.admin-quick-action-card:hover > svg {
+  transform: translate(2px, -2px);
+}
+
+.admin-quick-action-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #111111;
+  color: #ffffff;
+}
+
+.admin-quick-action-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-quick-action-content strong {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.admin-quick-action-content span {
+  margin-top: 4px;
+  color: #77736d;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1100px) {
+  .admin-quick-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-quick-actions-section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .admin-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-quick-action-card {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-quick-action-card,
+  .admin-quick-action-card > svg {
+    transition: none;
+  }
+}
+/* ============================================================
+   PANEL HEADER ACTIONS
+============================================================ */
+
+.admin-panel-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-view-all-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 10px;
+  border: 1px solid #e1ddd5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #55514b;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-view-all-button:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-1px);
+}
+
+.admin-view-all-button svg {
+  transition: transform 0.2s ease;
+}
+
+.admin-view-all-button:hover svg {
+  transform: translate(1px, -1px);
+}
+
+@media (max-width: 700px) {
+  .admin-panel-header-actions {
+    gap: 8px;
+  }
+
+  .admin-view-all-button {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-view-all-button,
+  .admin-view-all-button svg {
+    transition: none;
+  }
+}
+/* ============================================================
+   ADMIN CONFIRMATION MODAL
+============================================================ */
+
+.admin-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(17, 17, 17, 0.42);
+  backdrop-filter: blur(6px);
+  animation: admin-confirm-overlay-in 0.2s ease;
+}
+
+.admin-confirm-modal {
+  width: min(100%, 430px);
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e6e1d8;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+  animation: admin-confirm-modal-in 0.25s ease;
+}
+
+.admin-confirm-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: #f4f1eb;
+  color: #111111;
+}
+
+.admin-confirm-content h3 {
+  margin: 6px 0 8px;
+  color: #111111;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.admin-confirm-content p {
+  margin: 0;
+  color: #77736d;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.admin-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.admin-confirm-secondary,
+.admin-confirm-danger {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-confirm-secondary {
+  background: #ffffff;
+  border: 1px solid #dfdad1;
+  color: #55514b;
+}
+
+.admin-confirm-secondary:hover {
+  background: #f7f5f1;
+  border-color: #cfc9bf;
+}
+
+.admin-confirm-danger {
+  background: #111111;
+  border: 1px solid #111111;
+  color: #ffffff;
+}
+
+.admin-confirm-danger:hover {
+  background: #292929;
+  border-color: #292929;
+  transform: translateY(-1px);
+}
+
+.admin-confirm-secondary:disabled,
+.admin-confirm-danger:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+@keyframes admin-confirm-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes admin-confirm-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-confirm-overlay {
+    align-items: flex-end;
+    padding: 12px;
+  }
+
+  .admin-confirm-modal {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .admin-confirm-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-confirm-secondary,
+  .admin-confirm-danger {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-confirm-overlay,
+  .admin-confirm-modal {
+    animation: none;
+  }
+
+  .admin-confirm-secondary,
+  .admin-confirm-danger {
+    transition: none;
+  }
+}
+/* ============================================================
+   ADMIN BOOKING DETAILS - ALIGNMENT FIX
+============================================================ */
+
+.admin-booking-details-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TOP BACK + STATUS */
+
+.admin-details-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 0;
+  background: transparent;
+  color: #55514b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-back-button:hover {
+  background: #f1eee8;
+  color: #111111;
+}
+
+/* ============================================================
+   SUMMARY CARDS
+============================================================ */
+
+.admin-details-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+  margin-bottom: 22px;
+}
+
+.admin-details-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 16px;
+}
+
+.admin-details-summary-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f2f0eb;
+  color: #111111;
+}
+
+.admin-details-summary-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 5px;
+}
+
+.admin-details-summary-card span {
+  color: #77736d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.admin-details-summary-card strong {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* DARK TOTAL CARD */
+
+.admin-details-summary-dark {
+  background: #111111;
+  border-color: #111111;
+}
+
+.admin-details-summary-dark
+  .admin-details-summary-icon {
+  background: #292929;
+  color: #ffffff;
+}
+
+.admin-details-summary-dark span {
+  color: #aaa7a1;
+}
+
+.admin-details-summary-dark strong {
+  color: #ffffff;
+}
+
+/* ============================================================
+   MAIN DETAILS GRID
+============================================================ */
+
+.admin-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+/* ============================================================
+   DETAILS CARDS
+============================================================ */
+
+.admin-details-card {
+  min-width: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.admin-details-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #eeeae3;
+}
+
+.admin-details-card-header > div {
+  min-width: 0;
+}
+
+.admin-details-card-header h3 {
+  margin: 5px 0 0;
+  color: #111111;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.admin-details-card-header > svg {
+  flex-shrink: 0;
+  color: #77736d;
+}
+
+/* ============================================================
+   INFORMATION LIST
+============================================================ */
+
+.admin-details-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-details-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 13px 0;
+}
+
+.admin-details-info-item > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #77736d;
+}
+
+.admin-details-info-item > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 4px;
+}
+
+.admin-details-info-item span {
+  color: #99938b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.admin-details-info-item strong {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   PAYMENT HISTORY
+============================================================ */
+
+.admin-payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 16px;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.admin-payment-item > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.admin-payment-item > div:first-child strong {
+  color: #222222;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-payment-item > div:first-child span {
+  color: #77736d;
+  font-size: 11px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.admin-payment-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.admin-payment-right > strong {
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   NO PAYMENT
+============================================================ */
+
+.admin-details-no-payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  gap: 10px;
+  color: #99938b;
+  text-align: center;
+}
+
+.admin-details-no-payment svg {
+  color: #aaa49b;
+}
+
+.admin-details-no-payment p {
+  margin: 0;
+  color: #77736d;
+  font-size: 13px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1100px) {
+  .admin-details-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-details-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .admin-details-summary-card {
+    padding: 16px;
+  }
+
+  .admin-details-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .admin-details-card-header {
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+  }
+
+  .admin-details-card-header h3 {
+    font-size: 17px;
+  }
+
+  .admin-details-info-item {
+    gap: 11px;
+  }
+
+  .admin-payment-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-payment-right {
+    width: 100%;
+    align-items: flex-start;
+  }
+}/* ============================================================
+   ADMIN USER ROLE CONFIRMATION MODAL
+============================================================ */
+
+.admin-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(17, 17, 17, 0.42);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  animation: admin-confirm-overlay-in 0.2s ease;
+}
+
+.admin-confirm-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 440px;
+
+  padding: 30px;
+
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-radius: 22px;
+
+  box-shadow:
+    0 24px 70px rgba(17, 17, 17, 0.16),
+    0 8px 24px rgba(17, 17, 17, 0.08);
+
+  animation: admin-confirm-modal-in 0.24s ease;
+}
+
+.admin-confirm-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e8e3da;
+  border-radius: 10px;
+
+  background: #faf9f6;
+  color: #66615a;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-confirm-close:hover:not(:disabled) {
+  background: #f1eee8;
+  color: #111111;
+  border-color: #d9d3c9;
+  transform: scale(1.03);
+}
+
+.admin-confirm-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-confirm-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 15px;
+
+  background: #f5f2ec;
+  color: #171717;
+}
+
+.admin-confirm-content {
+  padding-right: 18px;
+}
+
+.admin-confirm-content h3 {
+  margin: 0 0 9px;
+
+  color: #111111;
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.admin-confirm-content p {
+  margin: 0;
+
+  color: #77736d;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.admin-confirm-content strong {
+  color: #222222;
+  font-weight: 650;
+}
+
+.admin-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 26px;
+}
+
+.admin-confirm-secondary,
+.admin-confirm-danger {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-confirm-secondary {
+  border: 1px solid #e1dcd3;
+  background: #ffffff;
+  color: #55514b;
+}
+
+.admin-confirm-secondary:hover:not(:disabled) {
+  background: #f7f5f1;
+  border-color: #cec8be;
+  color: #111111;
+}
+
+.admin-confirm-danger {
+  border: 1px solid #111111;
+  background: #111111;
+  color: #ffffff;
+}
+
+.admin-confirm-danger:hover:not(:disabled) {
+  background: #2b2b2b;
+  border-color: #2b2b2b;
+  transform: translateY(-1px);
+}
+
+.admin-confirm-secondary:disabled,
+.admin-confirm-danger:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes admin-confirm-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes admin-confirm-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-confirm-overlay {
+    padding: 16px;
+  }
+
+  .admin-confirm-modal {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .admin-confirm-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-confirm-secondary,
+  .admin-confirm-danger {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-confirm-overlay,
+  .admin-confirm-modal {
+    animation: none;
+  }
+
+  .admin-confirm-close,
+  .admin-confirm-secondary,
+  .admin-confirm-danger {
+    transition: none;
+  }
+}

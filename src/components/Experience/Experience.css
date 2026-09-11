@@ -1,0 +1,564 @@
+.experience {
+  position: relative;
+  z-index: 1;
+  background: #0b0b0b;
+  padding: 150px 0 160px;
+  overflow: hidden;
+}
+
+/* =================================
+   INTRO
+================================= */
+
+.experience-intro {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 90px;
+}
+
+.experience-heading {
+  max-width: 850px;
+}
+
+.experience-heading h2 {
+  margin-top: 18px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+
+  color: #f5f0e8;
+}
+
+.experience-heading h2 span {
+  display: block;
+
+  color: #c6a15b;
+  font-style: italic;
+}
+
+.experience-description {
+  max-width: 500px;
+  margin-top: 30px;
+
+  color: #929292;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =================================
+   SCROLL EXPAND
+================================= */
+
+.experience-expand-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+   IMPORTANT:
+   No position: sticky here.
+   GSAP ScrollTrigger handles the pinning.
+*/
+
+.experience-expand {
+  position: relative;
+
+  width: 76vw;
+  max-width: 1050px;
+
+  height: 76vh;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #151515;
+
+  transform-origin: center center;
+
+  will-change:
+    width,
+    height,
+    border-radius;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* =================================
+   MAIN IMAGE
+================================= */
+
+.experience-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.experience-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.12);
+
+  will-change: transform;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* =================================
+   OVERLAY
+================================= */
+
+.experience-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.03) 35%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+}
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+.experience-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 42px;
+
+  color: #f5f0e8;
+
+  pointer-events: none;
+}
+
+.experience-number {
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  font-weight: 500;
+
+  color: rgba(245, 240, 232, 0.78);
+}
+
+.experience-content-bottom {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.experience-content h3 {
+  margin: 0;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(44px, 5vw, 76px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.035em;
+}
+
+.experience-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 8px;
+
+  color: #f5f0e8;
+
+  border-bottom: 1px solid rgba(245, 240, 232, 0.5);
+
+  font-size: 12px;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+
+  pointer-events: auto;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.experience-link:hover {
+  color: #c6a15b;
+
+  border-color: #c6a15b;
+
+  gap: 17px;
+}
+
+/* =================================
+   SECONDARY SECTION
+================================= */
+
+.experience-secondary {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 100px;
+
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+/* =================================
+   SECONDARY CARD
+================================= */
+
+.experience-secondary-card {
+  position: relative;
+
+  min-height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #151515;
+}
+
+.secondary-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.secondary-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.experience-secondary-card:hover
+.secondary-image img {
+  transform: scale(1.05);
+}
+
+.experience-secondary-card::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.78)
+    );
+}
+
+/* =================================
+   SECONDARY CONTENT
+================================= */
+
+.secondary-content {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 34px;
+  right: 34px;
+  bottom: 34px;
+
+  color: #f5f0e8;
+}
+
+.secondary-content span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.secondary-content h3 {
+  margin-bottom: 30px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+}
+
+.secondary-content a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #f5f0e8;
+
+  font-size: 12px;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.secondary-content a:hover {
+  color: #c6a15b;
+
+  gap: 15px;
+}
+
+/* =================================
+   STATEMENT
+================================= */
+
+.experience-statement {
+  max-width: 440px;
+}
+
+.experience-statement h3 {
+  margin-top: 18px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(42px, 4.5vw, 64px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+}
+
+.experience-statement h3 span {
+  display: block;
+
+  color: #c6a15b;
+
+  font-style: italic;
+}
+
+.experience-statement > p:last-child {
+  max-width: 380px;
+
+  margin-top: 30px;
+
+  color: #888;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .experience {
+    padding: 110px 0 120px;
+  }
+
+  .experience-intro {
+    margin-bottom: 65px;
+  }
+
+  .experience-expand-wrap {
+    height: 100vh;
+  }
+
+  .experience-expand {
+    width: calc(100% - 48px);
+
+    max-width: none;
+
+    height: 70vh;
+
+    border-radius: 24px;
+  }
+
+  .experience-content {
+    padding: 30px;
+  }
+
+  .experience-content-bottom {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 28px;
+  }
+
+  .experience-secondary {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    margin-top: 80px;
+  }
+
+  .experience-secondary-card {
+    min-height: 520px;
+  }
+
+  .experience-statement {
+    max-width: 600px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .experience {
+    padding: 90px 0 100px;
+  }
+
+  .experience-intro {
+    margin-bottom: 50px;
+  }
+
+  .experience-heading h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .experience-description {
+    margin-top: 24px;
+
+    font-size: 14px;
+  }
+
+  .experience-expand-wrap {
+    height: 100vh;
+  }
+
+  .experience-expand {
+    width: calc(100% - 32px);
+
+    height: 68vh;
+
+    border-radius: 20px;
+  }
+
+  .experience-content {
+    padding: 24px;
+  }
+
+  .experience-number {
+    font-size: 9px;
+  }
+
+  .experience-content h3 {
+    font-size: clamp(40px, 11vw, 54px);
+  }
+
+  .experience-link {
+    font-size: 10px;
+  }
+
+  .experience-secondary {
+    margin-top: 60px;
+
+    gap: 55px;
+  }
+
+  .experience-secondary-card {
+    min-height: 450px;
+
+    border-radius: 16px;
+  }
+
+  .secondary-content {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .secondary-content h3 {
+    font-size: 42px;
+  }
+
+  .experience-statement h3 {
+    font-size: 44px;
+  }
+}

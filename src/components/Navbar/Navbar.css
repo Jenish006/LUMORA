@@ -1,0 +1,275 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 11, 11, 0.9),
+    rgba(11, 11, 11, 0)
+  );
+
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+.navbar-inner {
+  width: min(1400px, calc(100% - 64px));
+  height: 88px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: var(--cream);
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gold);
+
+  color: var(--gold);
+
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.logo-name {
+  font-size: 15px;
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+}
+
+/* DESKTOP LINKS */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+
+  margin-left: 80px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  color: rgba(245, 240, 232, 0.7);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold);
+
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--cream);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT ACTIONS */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: transparent;
+  color: rgba(245, 240, 232, 0.75);
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
+}
+
+.login-button:hover {
+  color: var(--cream);
+}
+
+.reserve-button {
+  padding: 13px 21px;
+
+  border: 1px solid rgba(245, 240, 232, 0.35);
+
+  color: var(--cream);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.reserve-button:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--bg);
+}
+
+/* MOBILE */
+
+.mobile-menu-button {
+  display: none;
+
+  background: transparent;
+  color: var(--cream);
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+  display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .navbar-links {
+    gap: 22px;
+    margin-left: 20px;
+  }
+
+  .navbar-actions {
+    gap: 14px;
+  }
+
+  .reserve-button {
+    padding: 11px 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .navbar-inner {
+    width: calc(100% - 32px);
+    height: 76px;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu {
+    display: flex;
+
+    position: absolute;
+    top: 76px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 24px 32px;
+
+    flex-direction: column;
+    gap: 22px;
+
+    background: rgba(11, 11, 11, 0.97);
+
+    border-top: 1px solid var(--border);
+
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu a,
+  .mobile-signin {
+    width: 100%;
+
+    background: transparent;
+    color: var(--cream);
+
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    text-align: left;
+  }
+
+  .mobile-reserve {
+    padding: 14px 18px;
+
+    background: var(--cream);
+    color: var(--bg) !important;
+
+    text-align: center !important;
+  }
+
+  .logo-name {
+    font-size: 13px;
+  }
+}

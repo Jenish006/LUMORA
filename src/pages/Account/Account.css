@@ -1,0 +1,916 @@
+.account-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  padding: 30px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: -300px;
+  right: -250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(198, 161, 91, 0.08),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.account-container {
+  position: relative;
+  z-index: 1;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 45px;
+}
+
+.account-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f5f0e8;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+}
+
+.account-logo-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c6a15b;
+  color: #c6a15b;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+}
+
+.account-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.account-back:hover {
+  color: #c6a15b;
+}
+
+.account-profile {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 50px;
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  background: #111;
+}
+
+.account-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #c6a15b;
+  border: 1px solid rgba(198, 161, 91, 0.45);
+  background: rgba(198, 161, 91, 0.05);
+}
+
+.account-eyebrow {
+  color: #c6a15b;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+
+.account-welcome h1 {
+  color: #f5f0e8;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.account-welcome h1 span {
+  color: #c6a15b;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+.account-welcome > p:last-child {
+  margin-top: 15px;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.account-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.account-logout:hover {
+  color: #c6a15b;
+}
+
+.account-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  border-top: 0;
+}
+
+.account-stat {
+  padding: 25px 30px;
+  border-right: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.account-stat:last-child {
+  border-right: 0;
+}
+
+.account-stat span {
+  color: #c6a15b;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
+
+.account-stat p {
+  margin-top: 5px;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 24px;
+  margin-top: 80px;
+}
+
+.account-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.account-section-header p {
+  color: #c6a15b;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
+}
+
+.account-section-header h2 {
+  color: #f5f0e8;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.account-section-header a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c6a15b;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.account-booking-card {
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  background: #111;
+}
+
+.account-booking-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.account-booking-top > div:first-child > span {
+  color: #c6a15b;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.account-booking-top h3 {
+  margin-top: 10px;
+  color: #f5f0e8;
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.account-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: #666;
+  font-size: 11px;
+}
+
+.account-status {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c6a15b;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.account-booking-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(245, 240, 232, 0.08);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+}
+
+.account-booking-details > div {
+  display: flex;
+  gap: 10px;
+  padding: 23px 20px;
+  border-right: 1px solid rgba(245, 240, 232, 0.08);
+  color: #777;
+}
+
+.account-booking-details > div:last-child {
+  border-right: 0;
+}
+
+.account-booking-details span,
+.account-profile-row span {
+  display: block;
+  color: #555;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  margin-bottom: 6px;
+}
+
+.account-booking-details strong,
+.account-profile-row strong {
+  display: block;
+  color: #cfc8bc;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.account-booking-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 30px;
+}
+
+.account-booking-bottom span {
+  color: #555;
+  font-size: 10px;
+}
+
+.account-booking-bottom strong {
+  color: #c6a15b;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.account-empty {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  background: #111;
+  color: #666;
+}
+
+.account-empty h3 {
+  margin-top: 16px;
+  color: #cfc8bc;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.account-empty p {
+  margin: 8px 0 20px;
+  color: #666;
+  font-size: 11px;
+}
+
+.account-empty a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c6a15b;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.account-sidebar-card {
+  padding: 28px;
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  background: #111;
+}
+
+.account-sidebar-label {
+  color: #c6a15b;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  margin-bottom: 25px;
+}
+
+.account-profile-row {
+  display: flex;
+  gap: 13px;
+  padding: 17px 0;
+  border-top: 1px solid rgba(245, 240, 232, 0.07);
+  color: #777;
+}
+
+.account-help h3 {
+  color: #f5f0e8;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.account-help h3 span {
+  display: block;
+  color: #c6a15b;
+  font-style: italic;
+}
+
+.account-help > p:not(.account-sidebar-label) {
+  margin: 15px 0 22px;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.account-help a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c6a15b;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.account-history {
+  margin-top: 100px;
+}
+
+.account-history-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.history-card {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid rgba(245, 240, 232, 0.08);
+  background: #111;
+  transition: border-color 0.3s ease;
+}
+
+.history-card:hover {
+  border-color: rgba(198, 161, 91, 0.35);
+}
+
+.history-card > span {
+  color: #555;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.history-card h3 {
+  margin-top: 28px;
+  color: #e8e1d7;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.history-card p {
+  margin-top: 6px;
+  color: #666;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .account-profile {
+    grid-template-columns: auto 1fr;
+  }
+
+  .account-logout {
+    grid-column: 2;
+  }
+
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account-booking-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .account-booking-details > div:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .account-page {
+    padding-top: 20px;
+  }
+
+  .account-header {
+    padding-bottom: 30px;
+  }
+
+  .account-profile {
+    padding: 28px 22px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .account-avatar {
+    margin: 0 auto;
+  }
+
+  .account-welcome h1 span {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .account-logout {
+    grid-column: auto;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .account-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .account-stat {
+    border-right: 0;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+  }
+
+  .account-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .account-grid {
+    margin-top: 60px;
+  }
+
+  .account-section-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .account-booking-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .account-booking-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account-booking-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .account-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .account-history-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================================
+   CANCEL RESERVATION MODAL
+   ============================================================ */
+
+.account-cancel-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(12, 12, 12, 0.58);
+  backdrop-filter: blur(8px);
+
+  animation: accountCancelOverlayIn 0.22s ease both;
+}
+
+.account-cancel-modal {
+  position: relative;
+
+  width: min(430px, 100%);
+
+  padding: 34px;
+
+  background: #f8f6f1;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.2);
+
+  animation: accountCancelModalIn 0.25s ease both;
+}
+
+.account-cancel-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  background: transparent;
+
+  color: #555;
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.account-cancel-close:hover {
+  background: #171717;
+  color: #fff;
+}
+
+.account-cancel-close:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.account-cancel-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(23, 23, 23, 0.1);
+
+  color: #777;
+}
+
+.account-cancel-content p {
+  margin: 0 0 9px;
+
+  color: #888;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.account-cancel-content h3 {
+  margin: 0 0 12px;
+
+  color: #171717;
+
+  font-size: 25px;
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+}
+
+.account-cancel-content span {
+  display: block;
+
+  color: #666;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.account-cancel-content strong {
+  color: #171717;
+  font-weight: 500;
+}
+
+.account-cancel-actions {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.account-cancel-actions button {
+  flex: 1;
+
+  min-height: 42px;
+
+  padding: 11px 14px;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.account-cancel-secondary {
+  background: transparent;
+
+  border: 1px solid rgba(23, 23, 23, 0.15);
+
+  color: #555;
+}
+
+.account-cancel-secondary:hover {
+  background: #ebe8e1;
+  border-color: rgba(23, 23, 23, 0.25);
+}
+
+.account-cancel-danger {
+  background: #171717;
+
+  border: 1px solid #171717;
+
+  color: #fff;
+}
+
+.account-cancel-danger:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.account-cancel-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes accountCancelOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes accountCancelModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .account-cancel-modal {
+    padding: 28px 22px;
+  }
+
+  .account-cancel-actions {
+    flex-direction: column;
+  }
+
+  .account-cancel-actions button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-cancel-overlay,
+  .account-cancel-modal {
+    animation: none;
+  }
+
+  .account-cancel-actions button,
+  .account-cancel-close {
+    transition: none;
+  }
+}
+/* ================================
+   Cancellation Success Modal
+================================ */
+
+.lumora-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: lumora-success-overlay-in 0.25s ease;
+}
+
+.lumora-success-modal {
+  position: relative;
+  width: min(460px, 100%);
+  padding: 42px 36px 36px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  animation: lumora-success-modal-in 0.3s ease;
+}
+
+.lumora-success-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lumora-success-close:hover {
+  color: #171717;
+}
+
+.lumora-success-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #171717;
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.lumora-success-label {
+  margin-bottom: 10px;
+  color: #999;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.lumora-success-modal h2 {
+  margin: 0;
+  color: #171717;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.lumora-success-modal p {
+  max-width: 330px;
+  margin: 14px auto 28px;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.lumora-success-button {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #171717;
+  background: #171717;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lumora-success-button:hover {
+  background: #2b2b2b;
+  transform: translateY(-1px);
+}
+
+@keyframes lumora-success-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lumora-success-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .lumora-success-modal {
+    padding: 36px 24px 26px;
+  }
+
+  .lumora-success-modal h2 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumora-success-overlay,
+  .lumora-success-modal {
+    animation: none;
+  }
+
+  .lumora-success-button {
+    transition: none;
+  }
+}
