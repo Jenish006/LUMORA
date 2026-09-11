@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../../api';
+﻿import { API_BASE_URL } from '../../api';
 import {
   ArrowLeft,
   ArrowRight,
@@ -52,8 +52,13 @@ function Reservation() {
   const [restaurantsLoading, setRestaurantsLoading] =
     useState(true);
 
+  // ============================================================
+  // Read previously selected restaurant
+  // ============================================================
+
   const selectedRestaurant = (() => {
-    const saved = localStorage.getItem('selectedRestaurant');
+    const saved =
+      localStorage.getItem('selectedRestaurant');
 
     try {
       return saved ? JSON.parse(saved) : null;
@@ -137,16 +142,27 @@ function Reservation() {
           );
         }
 
-        setRestaurants(data.restaurants);
+        const restaurantList =
+          Array.isArray(data.restaurants)
+            ? data.restaurants
+            : [];
+
+        setRestaurants(restaurantList);
+
+        // --------------------------------------------------------
+        // If no restaurant was previously selected,
+        // select the first available restaurant.
+        // --------------------------------------------------------
 
         if (
           !selectedRestaurantName &&
-          data.restaurants.length > 0
+          restaurantList.length > 0
         ) {
           setRestaurant(
-            data.restaurants[0].name
+            restaurantList[0].name
           );
         }
+
       } catch (error) {
         console.error(
           'Restaurant fetch error:',
@@ -166,6 +182,10 @@ function Reservation() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // ==========================================================
+    // Basic validation
+    // ==========================================================
 
     if (!date) {
       showPopup(
@@ -191,33 +211,70 @@ function Reservation() {
       return;
     }
 
-    // ----------------------------------------------------------
-    // Find selected restaurant object
-    // ----------------------------------------------------------
+    // ==========================================================
+    // Find selected restaurant
+    //
+    // FIRST:
+    // Match by ID from localStorage.
+    //
+    // FALLBACK:
+    // Match by normalized restaurant name.
+    //
+    // This prevents errors caused by:
+    // - uppercase/lowercase differences
+    // - extra spaces
+    // - stale restaurant selection
+    // ==========================================================
 
     const selectedRestaurantData =
       restaurants.find(
-        (item) => item.name === restaurant
+        (item) =>
+          selectedRestaurant?.id &&
+          Number(item.id) ===
+            Number(selectedRestaurant.id)
+      ) ||
+      restaurants.find(
+        (item) =>
+          String(item.name || '')
+            .trim()
+            .toLowerCase() ===
+          String(restaurant || '')
+            .trim()
+            .toLowerCase()
       );
 
+    // ==========================================================
+    // Restaurant not found
+    // ==========================================================
+
     if (!selectedRestaurantData) {
+      console.error(
+        'Selected restaurant not found:',
+        {
+          selectedRestaurant,
+          restaurant,
+          restaurants,
+        }
+      );
+
       showPopup(
         'RESTAURANT UNAVAILABLE',
         'The selected restaurant could not be found. Please choose another restaurant.'
       );
+
       return;
     }
 
-    // ----------------------------------------------------------
+    // ==========================================================
     // Convert selected time
-    // ----------------------------------------------------------
+    // ==========================================================
 
     const bookingTime =
       convertTimeTo24Hour(time);
 
-    // ----------------------------------------------------------
+    // ==========================================================
     // Check availability
-    // ----------------------------------------------------------
+    // ==========================================================
 
     setIsCheckingAvailability(true);
 
@@ -240,16 +297,17 @@ function Reservation() {
         );
       }
 
-      // --------------------------------------------------------
+      // ========================================================
       // Select resource based on seating preference
-      // --------------------------------------------------------
+      // ========================================================
 
       let selectedTable = null;
       let selectedPrivateRoom = null;
 
       if (tableType === 'Indoor Table') {
         selectedTable =
-          availabilityData.tables?.[0] || null;
+          availabilityData.tables?.[0] ||
+          null;
       }
 
       if (tableType === 'Private Dining') {
@@ -258,9 +316,9 @@ function Reservation() {
           null;
       }
 
-      // --------------------------------------------------------
+      // ========================================================
       // No availability
-      // --------------------------------------------------------
+      // ========================================================
 
       if (
         !selectedTable &&
@@ -274,9 +332,9 @@ function Reservation() {
         return;
       }
 
-      // --------------------------------------------------------
+      // ========================================================
       // Create booking in backend
-      // --------------------------------------------------------
+      // ========================================================
 
       const bookingResponse =
         await fetch(
@@ -302,10 +360,12 @@ function Reservation() {
               guests,
 
               table_id:
-                selectedTable?.id || null,
+                selectedTable?.id ||
+                null,
 
               private_room_id:
-                selectedPrivateRoom?.id || null,
+                selectedPrivateRoom?.id ||
+                null,
             }),
           }
         );
@@ -313,9 +373,9 @@ function Reservation() {
       const bookingData =
         await bookingResponse.json();
 
-      // --------------------------------------------------------
+      // ========================================================
       // Authentication error
-      // --------------------------------------------------------
+      // ========================================================
 
       if (
         bookingResponse.status === 401
@@ -331,9 +391,9 @@ function Reservation() {
         return;
       }
 
-      // --------------------------------------------------------
+      // ========================================================
       // Booking error
-      // --------------------------------------------------------
+      // ========================================================
 
       if (
         !bookingResponse.ok ||
@@ -345,13 +405,10 @@ function Reservation() {
         );
       }
 
-      // --------------------------------------------------------
-      // IMPORTANT
-      //
+      // ========================================================
       // Backend creates the real total_amount.
-      // We save that exact amount.
-      // No hardcoded ₹2,500.
-      // --------------------------------------------------------
+      // Never hardcode booking price on frontend.
+      // ========================================================
 
       const backendTotalAmount =
         Number(
@@ -374,9 +431,9 @@ function Reservation() {
         );
       }
 
-      // --------------------------------------------------------
+      // ========================================================
       // Save backend booking information
-      // --------------------------------------------------------
+      // ========================================================
 
       const booking = {
         id:
@@ -386,6 +443,7 @@ function Reservation() {
           bookingData.booking.id,
 
         restaurant:
+          selectedRestaurantData.name ||
           restaurant,
 
         restaurantId:
@@ -430,7 +488,6 @@ function Reservation() {
         totalAmount:
           backendTotalAmount,
 
-        // Preserve backend naming
         total_amount:
           backendTotalAmount,
 
@@ -447,18 +504,18 @@ function Reservation() {
           bookingData.booking.expires_at,
       };
 
-      // --------------------------------------------------------
+      // ========================================================
       // Save booking
-      // --------------------------------------------------------
+      // ========================================================
 
       localStorage.setItem(
         'lumoraBooking',
         JSON.stringify(booking)
       );
 
-      // --------------------------------------------------------
-      // Continue
-      // --------------------------------------------------------
+      // ========================================================
+      // Continue to booking summary
+      // ========================================================
 
       navigate('/booking-summary');
 
@@ -610,13 +667,30 @@ function Reservation() {
                         type="button"
                         key={item.id}
                         className={
-                          restaurant === item.name
+                          String(restaurant)
+                            .trim()
+                            .toLowerCase() ===
+                          String(item.name)
+                            .trim()
+                            .toLowerCase()
                             ? 'selected'
                             : ''
                         }
                         onClick={() => {
                           setRestaurant(
                             item.name
+                          );
+
+                          // Save selected restaurant
+                          // so its ID is available
+                          // on the next submit.
+
+                          localStorage.setItem(
+                            'selectedRestaurant',
+                            JSON.stringify({
+                              id: item.id,
+                              name: item.name,
+                            })
                           );
 
                           setShowRestaurants(
@@ -891,7 +965,9 @@ function Reservation() {
               <button
                 type="submit"
                 className="reservation-submit"
-                disabled={isCheckingAvailability}
+                disabled={
+                  isCheckingAvailability
+                }
               >
 
                 <span>
@@ -931,6 +1007,7 @@ function Reservation() {
           className="lumora-message-overlay"
           onClick={closePopup}
         >
+
           <div
             className="lumora-message-popup"
             onClick={(event) =>
@@ -976,6 +1053,7 @@ function Reservation() {
             </button>
 
           </div>
+
         </div>
       )}
 
