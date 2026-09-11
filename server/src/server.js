@@ -13,6 +13,7 @@ const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
@@ -22,8 +23,32 @@ const PORT = process.env.PORT || 5000;
 // MIDDLEWARE
 // ============================================================
 
+// Local frontend + Render production frontend
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://lumora-frontend-g63l.onrender.com',
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: (origin, callback) => {
+
+    // Allow requests without an Origin header
+    // such as direct API requests / health checks
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    console.log(`CORS BLOCKED: ${origin}`);
+
+    return callback(
+      new Error('Not allowed by CORS')
+    );
+  },
+
   credentials: true,
 }));
 
@@ -36,6 +61,7 @@ app.use(cookieParser());
 // ============================================================
 
 app.use((req, res, next) => {
+
   console.log(
     `REQUEST: ${req.method} ${req.originalUrl}`
   );
@@ -49,10 +75,12 @@ app.use((req, res, next) => {
 // ============================================================
 
 app.get('/', (req, res) => {
+
   res.json({
     success: true,
     message: 'LUMORA API is running',
   });
+
 });
 
 
@@ -61,7 +89,9 @@ app.get('/', (req, res) => {
 // ============================================================
 
 app.get('/api/health', async (req, res) => {
+
   try {
+
     const result = await pool.query(
       'SELECT current_database() AS database'
     );
@@ -73,6 +103,7 @@ app.get('/api/health', async (req, res) => {
     });
 
   } catch (error) {
+
     console.error(
       'Database connection error:',
       error
@@ -82,7 +113,9 @@ app.get('/api/health', async (req, res) => {
       success: false,
       message: 'Database connection failed',
     });
+
   }
+
 });
 
 
@@ -91,12 +124,16 @@ app.get('/api/health', async (req, res) => {
 // ============================================================
 
 app.get('/api/users/direct-test', (req, res) => {
-  console.log('DIRECT USER TEST ROUTE HIT');
+
+  console.log(
+    'DIRECT USER TEST ROUTE HIT'
+  );
 
   res.json({
     success: true,
     message: 'DIRECT USER ROUTE WORKING',
   });
+
 });
 
 
@@ -105,7 +142,9 @@ app.get('/api/users/direct-test', (req, res) => {
 // ============================================================
 
 const expirePendingBookings = async () => {
+
   try {
+
     const result = await pool.query(`
       UPDATE bookings
       SET
@@ -118,17 +157,22 @@ const expirePendingBookings = async () => {
     `);
 
     if (result.rowCount > 0) {
+
       console.log(
         `LUMORA: ${result.rowCount} expired booking(s) cancelled`
       );
+
     }
 
   } catch (error) {
+
     console.error(
       'Booking expiration error:',
       error
     );
+
   }
+
 };
 
 
@@ -137,7 +181,9 @@ const expirePendingBookings = async () => {
 // ============================================================
 
 const completeFinishedBookings = async () => {
+
   try {
+
     const result = await pool.query(`
       UPDATE bookings
       SET
@@ -153,17 +199,22 @@ const completeFinishedBookings = async () => {
     `);
 
     if (result.rowCount > 0) {
+
       console.log(
         `LUMORA: ${result.rowCount} booking(s) marked COMPLETED`
       );
+
     }
 
   } catch (error) {
+
     console.error(
       'Booking completion error:',
       error
     );
+
   }
+
 };
 
 
@@ -224,7 +275,9 @@ app.use(
 // USER ROUTES
 // ============================================================
 
-console.log('USER ROUTES LOADED');
+console.log(
+  'USER ROUTES LOADED'
+);
 
 app.use(
   '/api/users',
@@ -241,13 +294,23 @@ app.use(
   paymentRoutes
 );
 
-app.use('/api/admin', adminRoutes);
+
+// ============================================================
+// ADMIN ROUTES
+// ============================================================
+
+app.use(
+  '/api/admin',
+  adminRoutes
+);
+
 
 // ============================================================
 // 404 HANDLER
 // ============================================================
 
 app.use((req, res) => {
+
   console.log(
     `404 ROUTE NOT FOUND: ${req.method} ${req.originalUrl}`
   );
@@ -257,6 +320,7 @@ app.use((req, res) => {
     message: 'Route not found',
     path: req.originalUrl,
   });
+
 });
 
 
@@ -265,7 +329,9 @@ app.use((req, res) => {
 // ============================================================
 
 app.listen(PORT, () => {
+
   console.log(
     `LUMORA API running on http://localhost:${PORT}`
   );
+
 });
