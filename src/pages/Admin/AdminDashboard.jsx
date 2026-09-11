@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -38,7 +39,7 @@ const AdminDashboard = () => {
         analyticsResponse,
       ] = await Promise.all([
         fetch(
-          'http://localhost:5000/api/admin/dashboard',
+          `${API_BASE_URL}/api/admin/dashboard`,
           {
             method: 'GET',
             credentials: 'include',
@@ -46,7 +47,7 @@ const AdminDashboard = () => {
         ),
 
         fetch(
-          'http://localhost:5000/api/admin/analytics',
+          `${API_BASE_URL}/api/admin/analytics`,
           {
             method: 'GET',
             credentials: 'include',
@@ -113,7 +114,7 @@ const AdminDashboard = () => {
           analyticsResponse,
         ] = await Promise.all([
           fetch(
-            'http://localhost:5000/api/admin/dashboard',
+            `${API_BASE_URL}/api/admin/dashboard`,
             {
               method: 'GET',
               credentials: 'include',
@@ -121,7 +122,7 @@ const AdminDashboard = () => {
           ),
 
           fetch(
-            'http://localhost:5000/api/admin/analytics',
+            `${API_BASE_URL}/api/admin/analytics`,
             {
               method: 'GET',
               credentials: 'include',

@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 
 import {
@@ -38,7 +39,7 @@ const AdminPayments = () => {
       setError('');
 
       const response = await fetch(
-        'http://localhost:5000/api/admin/payments',
+        `${API_BASE_URL}/api/admin/payments`,
         {
           method: 'GET',
           credentials: 'include',
@@ -78,7 +79,7 @@ const AdminPayments = () => {
     const loadPayments = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/admin/payments',
+          `${API_BASE_URL}/api/admin/payments`,
           {
             method: 'GET',
             credentials: 'include',
@@ -162,7 +163,7 @@ const AdminPayments = () => {
       setRefundingPaymentId(payment.id);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/payments/${payment.id}/refund`,
+        `${API_BASE_URL}/api/admin/payments/${payment.id}/refund`,
         {
           method: 'POST',
           credentials: 'include',

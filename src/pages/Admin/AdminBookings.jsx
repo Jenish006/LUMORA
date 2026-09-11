@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,7 +37,7 @@ const AdminBookings = () => {
       setError('');
 
       const response = await fetch(
-        'http://localhost:5000/api/admin/bookings',
+        `${API_BASE_URL}/api/admin/bookings`,
         {
           method: 'GET',
           credentials: 'include',
@@ -78,7 +79,7 @@ const AdminBookings = () => {
     const loadBookings = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/admin/bookings',
+          `${API_BASE_URL}/api/admin/bookings`,
           {
             method: 'GET',
             credentials: 'include',
@@ -135,7 +136,7 @@ const AdminBookings = () => {
       );
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/bookings/${booking.id}/cancel`,
+        `${API_BASE_URL}/api/admin/bookings/${booking.id}/cancel`,
         {
           method: 'PATCH',
           credentials: 'include',

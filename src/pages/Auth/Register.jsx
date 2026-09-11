@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import {
   ArrowLeft,
   ArrowRight,
@@ -44,7 +45,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/auth/register',
+        `${API_BASE_URL}/api/auth/register`,
         {
           method: 'POST',
           headers: {

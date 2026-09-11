@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import {
   ArrowLeft,
   ArrowRight,
@@ -44,7 +45,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await fetch(
-        'http://localhost:5000/api/auth/forgot-password',
+        `${API_BASE_URL}/api/auth/forgot-password`,
         {
           method: 'POST',
           headers: {
@@ -102,7 +103,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await fetch(
-        'http://localhost:5000/api/auth/verify-reset-code',
+        `${API_BASE_URL}/api/auth/verify-reset-code`,
         {
           method: 'POST',
           headers: {
@@ -175,7 +176,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await fetch(
-        'http://localhost:5000/api/auth/reset-password',
+        `${API_BASE_URL}/api/auth/reset-password`,
         {
           method: 'POST',
           headers: {
@@ -225,7 +226,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await fetch(
-        'http://localhost:5000/api/auth/forgot-password',
+        `${API_BASE_URL}/api/auth/forgot-password`,
         {
           method: 'POST',
           headers: {

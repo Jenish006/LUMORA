@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import {
   ArrowLeft,
   ArrowRight,
@@ -125,7 +126,7 @@ function Reservation() {
     const fetchRestaurants = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/restaurants'
+          `${API_BASE_URL}/api/restaurants`
         );
 
         const data = await response.json();
@@ -223,7 +224,7 @@ function Reservation() {
     try {
       const availabilityResponse =
         await fetch(
-          `http://localhost:5000/api/restaurants/${selectedRestaurantData.id}/availability?date=${date}&time=${bookingTime}&guests=${guests}`
+          `${API_BASE_URL}/api/restaurants/${selectedRestaurantData.id}/availability?date=${date}&time=${bookingTime}&guests=${guests}`
         );
 
       const availabilityData =
@@ -279,7 +280,7 @@ function Reservation() {
 
       const bookingResponse =
         await fetch(
-          'http://localhost:5000/api/bookings',
+          `${API_BASE_URL}/api/bookings`,
           {
             method: 'POST',
             credentials: 'include',

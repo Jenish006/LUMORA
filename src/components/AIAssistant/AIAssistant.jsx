@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import {
   ArrowRight,
   Sparkles,
@@ -43,7 +44,7 @@ function AIAssistant() {
     const loadRestaurants = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/restaurants',
+          `${API_BASE_URL}/api/restaurants`,
           {
             method: 'GET',
           }

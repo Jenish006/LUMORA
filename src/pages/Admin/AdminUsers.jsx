@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 import {
   Search,
@@ -34,7 +35,7 @@ const AdminUsers = () => {
       setError('');
 
       const response = await fetch(
-        'http://localhost:5000/api/admin/users',
+        `${API_BASE_URL}/api/admin/users`,
         {
           method: 'GET',
           credentials: 'include',
@@ -70,7 +71,7 @@ const AdminUsers = () => {
     const loadUsers = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/admin/users',
+          `${API_BASE_URL}/api/admin/users`,
           {
             method: 'GET',
             credentials: 'include',
@@ -151,7 +152,7 @@ const AdminUsers = () => {
       setUpdatingUserId(user.id);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${user.id}/role`,
+        `${API_BASE_URL}/api/admin/users/${user.id}/role`,
         {
           method: 'PATCH',
           credentials: 'include',

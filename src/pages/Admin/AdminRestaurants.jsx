@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 import {
   Search,
@@ -89,7 +90,7 @@ const AdminRestaurants = () => {
       setUpdatingStatus(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/restaurants/${restaurant.id}/status`,
+        `${API_BASE_URL}/api/admin/restaurants/${restaurant.id}/status`,
         {
           method: 'PATCH',
           credentials: 'include',
@@ -240,7 +241,7 @@ const AdminRestaurants = () => {
       setSaving(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/restaurants/${editingRestaurant.id}`,
+        `${API_BASE_URL}/api/admin/restaurants/${editingRestaurant.id}`,
         {
           method: 'PATCH',
           credentials: 'include',
@@ -315,7 +316,7 @@ const AdminRestaurants = () => {
 
         const response =
           await fetch(
-            'http://localhost:5000/api/admin/restaurants',
+            `${API_BASE_URL}/api/admin/restaurants`,
             {
               method: 'GET',
               credentials: 'include',
@@ -365,7 +366,7 @@ const AdminRestaurants = () => {
         try {
           const response =
             await fetch(
-              'http://localhost:5000/api/admin/restaurants',
+              `${API_BASE_URL}/api/admin/restaurants`,
               {
                 method: 'GET',
                 credentials: 'include',

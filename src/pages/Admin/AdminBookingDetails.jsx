@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '../../api';
 import { useEffect, useState } from 'react';
 import {
   useNavigate,
@@ -32,7 +33,7 @@ const AdminBookingDetails = () => {
     const loadBookingDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/admin/bookings/${bookingId}`,
+          `${API_BASE_URL}/api/admin/bookings/${bookingId}`,
           {
             method: 'GET',
             credentials: 'include',
