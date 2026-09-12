@@ -14,6 +14,8 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { API_BASE_URL } from '../../api';
+
 import './Account.css';
 
 function Account() {
@@ -87,10 +89,13 @@ function Account() {
 
     const fetchBookings = async () => {
       try {
-        const response = await fetch('/api/bookings', {
-          method: 'GET',
-          credentials: 'include',
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/bookings`,
+          {
+            method: 'GET',
+            credentials: 'include',
+          }
+        );
 
         const data = await response.json();
 
@@ -308,14 +313,10 @@ function Account() {
         item.status || ''
       ).toUpperCase();
 
-      // Completed bookings are actual
-      // dining experiences.
       if (status === 'COMPLETED') {
         return true;
       }
 
-      // Confirmed bookings count only after
-      // their reservation date and time has passed.
       if (status === 'CONFIRMED') {
         const bookingDateTime =
           getBookingDateTime(item);
@@ -563,7 +564,7 @@ function Account() {
 
     try {
       const response = await fetch(
-        `/api/bookings/${upcomingBooking.id}/cancel`,
+        `${API_BASE_URL}/api/bookings/${upcomingBooking.id}/cancel`,
         {
           method: 'POST',
           credentials: 'include',
@@ -593,10 +594,8 @@ function Account() {
           )
       );
 
-      // Close confirmation modal
       setShowCancelModal(false);
 
-      // Show custom success modal
       setCancelSuccess(true);
     } catch (error) {
       console.error(
@@ -620,7 +619,7 @@ function Account() {
   const handleLogout = async () => {
     try {
       await fetch(
-        '/api/auth/logout',
+        `${API_BASE_URL}/api/auth/logout`,
         {
           method: 'POST',
           credentials: 'include',
@@ -748,8 +747,6 @@ function Account() {
 
         <section className="account-stats">
 
-          {/* UPCOMING */}
-
           <div className="account-stat">
 
             <span>
@@ -764,8 +761,6 @@ function Account() {
 
           </div>
 
-          {/* DINING EXPERIENCES */}
-
           <div className="account-stat">
 
             <span>
@@ -779,8 +774,6 @@ function Account() {
             </p>
 
           </div>
-
-          {/* RESTAURANTS VISITED */}
 
           <div className="account-stat">
 
